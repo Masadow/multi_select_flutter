@@ -217,6 +217,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
   final bool separateSelectedItems;
   final Color? checkColor;
   final bool isDismissible;
+  final EdgeInsets? textPadding;
   FormFieldState<List<V>>? state;
 
   _MultiSelectDialogFieldView({
@@ -250,6 +251,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
     this.separateSelectedItems = false,
     this.checkColor,
     required this.isDismissible,
+    this.textPadding,
   });
 
   /// This constructor allows a FormFieldState to be passed in. Called by MultiSelectDialogField.
@@ -285,6 +287,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
         separateSelectedItems = field.separateSelectedItems,
         checkColor = field.checkColor,
         isDismissible = field.isDismissible,
+        textPadding = field.textPadding,
         state = state;
 
   @override
@@ -449,7 +452,7 @@ class __MultiSelectDialogFieldViewState<V>
                       ),
                     )
                 : widget.decoration,
-            padding: const EdgeInsets.all(10),
+            padding: widget.textPadding ?? const EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
