@@ -100,6 +100,8 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
   /// Whether the user can dismiss the widget by tapping outside
   final bool isDismissible;
 
+  final EdgeInsets? textPadding;
+
   final AutovalidateMode autovalidateMode;
   final FormFieldValidator<List<V>>? validator;
   final FormFieldSetter<List<V>>? onSaved;
@@ -140,6 +142,7 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
     this.validator,
     this.initialValue = const [],
     this.autovalidateMode = AutovalidateMode.disabled,
+    this.textPadding,
     this.key,
   }) : super(
             key: key,
@@ -180,6 +183,7 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
                 separateSelectedItems: separateSelectedItems,
                 checkColor: checkColor,
                 isDismissible: isDismissible,
+                textPadding: textPadding,
               );
               return _MultiSelectDialogFieldView<V>._withState(field, state);
             });
