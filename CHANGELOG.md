@@ -3,6 +3,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.3] - 2024-04-26
+### Changed
+- add textPadding parameter
+
 ## [4.1.3] - 2022-11-27
 ### Changed
 - make initialValue non-nullable
